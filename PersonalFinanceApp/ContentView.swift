@@ -8,14 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var modelView = DailyTrackerList()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack{
+            VStack(spacing : 20) {
+                Spacer()
+                NavigationLink("Add New Daily Finances"){
+                    AddDayView(modelView: modelView)
+                }
+                Spacer()
+                NavigationLink("Financial Summary for week"){
+                    FinancialSummaryView(modelView: modelView)
+                }
+                Spacer()
+                NavigationLink("How am I doing?"){
+                    HowAmIDoingView(modelView: modelView)
+                }
+                Spacer()
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
