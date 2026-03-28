@@ -18,6 +18,7 @@ struct DailyTrackerModel : Identifiable{
     var TransportationExpense: Decimal?
     var RentExpense: Decimal?
     var MiscExpense: Decimal?
+    var savings: Decimal
     
     
 }

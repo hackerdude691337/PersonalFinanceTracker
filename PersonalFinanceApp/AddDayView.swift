@@ -19,6 +19,7 @@ struct AddDayView : View{
     @State private var transportationExpense: Decimal = 0.0
     @State private var rentExpense: Decimal = 0.0
     @State private var miscExpense: Decimal = 0.0
+    @State private var savings: Decimal = 0.0
     
     
     var body: some View{
@@ -89,8 +90,10 @@ struct AddDayView : View{
             }
             
             Button("Add Day"){
+                
                 totalExpense = foodExpense + entertainmentExpense + transportationExpense + rentExpense + miscExpense
-                let day_ = DailyTrackerModel(Date: date, TotalIncome: totalIncome, TotalExpense: totalExpense, FoodExpense: foodExpense, EntertainmentExpense: entertainmentExpense, TransportationExpense: transportationExpense, RentExpense: rentExpense, MiscExpense: miscExpense)
+                savings = totalIncome - totalExpense
+                let day_ = DailyTrackerModel(Date: date, TotalIncome: totalIncome, TotalExpense: totalExpense, FoodExpense: foodExpense, EntertainmentExpense: entertainmentExpense, TransportationExpense: transportationExpense, RentExpense: rentExpense, MiscExpense: miscExpense, savings: savings)
                 modelView.addDay(newDay: day_)
                 
                 totalIncome = 0.0
@@ -100,11 +103,12 @@ struct AddDayView : View{
                 transportationExpense = 0.0
                 rentExpense = 0.0
                 miscExpense = 0.0
+                savings = 0.0
                 //reset the fields after we add the day
                 
             }
-            
-            
+         
+            .navigationTitle("Daily Finances")
             
         }
         

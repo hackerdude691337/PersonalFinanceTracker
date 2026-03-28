@@ -29,15 +29,31 @@
 		983BF70E2F773015001E14DB /* PersonalFinanceAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersonalFinanceAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		98CE073C2F775516001B418A /* Exceptions for "PersonalFinanceApp" folder in "PersonalFinanceApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				PersonalFinanceAppTests/PersonalFinanceAppTests.swift,
+			);
+			target = 983BF6F62F773013001E14DB /* PersonalFinanceApp */;
+		};
+		98CE073D2F775516001B418A /* Exceptions for "PersonalFinanceApp" folder in "PersonalFinanceAppTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				PersonalFinanceAppTests/PersonalFinanceAppTests.swift,
+			);
+			target = 983BF7032F773015001E14DB /* PersonalFinanceAppTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		983BF6F92F773013001E14DB /* PersonalFinanceApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				98CE073C2F775516001B418A /* Exceptions for "PersonalFinanceApp" folder in "PersonalFinanceApp" target */,
+				98CE073D2F775516001B418A /* Exceptions for "PersonalFinanceApp" folder in "PersonalFinanceAppTests" target */,
+			);
 			path = PersonalFinanceApp;
-			sourceTree = "<group>";
-		};
-		983BF7072F773015001E14DB /* PersonalFinanceAppTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PersonalFinanceAppTests;
 			sourceTree = "<group>";
 		};
 		983BF7112F773015001E14DB /* PersonalFinanceAppUITests */ = {
@@ -76,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				983BF6F92F773013001E14DB /* PersonalFinanceApp */,
-				983BF7072F773015001E14DB /* PersonalFinanceAppTests */,
 				983BF7112F773015001E14DB /* PersonalFinanceAppUITests */,
 				983BF6F82F773013001E14DB /* Products */,
 			);
@@ -129,9 +144,6 @@
 			);
 			dependencies = (
 				983BF7062F773015001E14DB /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				983BF7072F773015001E14DB /* PersonalFinanceAppTests */,
 			);
 			name = PersonalFinanceAppTests;
 			packageProductDependencies = (
