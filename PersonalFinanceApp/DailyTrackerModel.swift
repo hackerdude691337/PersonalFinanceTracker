@@ -13,11 +13,11 @@ struct DailyTrackerModel : Identifiable{
     var Date: Date
     var TotalIncome : Decimal
     var TotalExpense: Decimal
-    var FoodExpense : Decimal?
-    var EntertainmentExpense: Decimal?
-    var TransportationExpense: Decimal?
-    var RentExpense: Decimal?
-    var MiscExpense: Decimal?
+    var FoodExpense : Decimal
+    var EntertainmentExpense: Decimal
+    var TransportationExpense: Decimal
+    var RentExpense: Decimal
+    var MiscExpense: Decimal
     var savings: Decimal
     
     

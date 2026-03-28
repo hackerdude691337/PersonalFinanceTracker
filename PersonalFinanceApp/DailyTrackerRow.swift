@@ -29,7 +29,7 @@ struct DailyTrackerRow: View {
         let f = NumberFormatter()
         f.numberStyle = .currency
         f.currencyCode = "USD"
-        f.maximumFractionDigits = 2 //converts currency into correct currency format
+        f.maximumFractionDigits = 2 //converts currency into correct currency format, usd format
         return f
     }()
     
@@ -38,7 +38,7 @@ struct DailyTrackerRow: View {
         VStack{
             
             Button {
-                withAnimation(.spring(duration: 0.3)) { isExpanded.toggle() }
+                withAnimation(.spring(duration: 0.3)) { isExpanded.toggle() } //if we click button we expand it (its a toggle)
             }
             label: {
                 HStack(alignment: .center) {
@@ -61,7 +61,25 @@ struct DailyTrackerRow: View {
                 }
                 
             }
-            
+            if isExpanded{
+                VStack{
+                    Divider()
+                        .padding(.vertical, 4)
+                    Text("Expense Breakdown")
+                    Label("Food expense", systemImage: "fork.knife")
+                                       .font(.subheadline)
+                                       .foregroundStyle(.secondary)
+                                   Spacer()
+                    Text(format(model.FoodExpense))
+                                       .font(.subheadline)
+                                       .foregroundStyle(.primary)
+                    
+                    
+                }
+                
+                
+                
+            }
             
         }
         
