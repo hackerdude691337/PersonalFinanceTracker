@@ -19,6 +19,10 @@ class DailyTrackerList : ObservableObject{
            }
     }
     
+    func deleteDay(at offsets: IndexSet){
+        days.remove(atOffsets: offsets)
+    }
+    
     func averageIncome() -> Decimal {
             guard !days.isEmpty else { return 0 }
             var total: Decimal = 0

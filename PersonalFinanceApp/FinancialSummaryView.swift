@@ -28,8 +28,11 @@ struct FinancialSummaryView: View {
                 Spacer()
                 
                 Section("Daily Breakdown"){
-                    ForEach(modelView.allDays) { day in
-                        DailyTrackerRow(model: day)
+                    List{
+                        ForEach(modelView.allDays) { day in
+                            DailyTrackerRow(model: day)
+                        }
+                        .onDelete(perform: modelView.deleteDay)
                     }
                 }
                 

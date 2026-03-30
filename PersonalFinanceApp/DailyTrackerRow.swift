@@ -15,14 +15,14 @@ struct DailyTrackerRow: View {
     let model: DailyTrackerModel
     @State private var isExpanded = false
     
-    private let dateFormatter: DateFormatter = {
+    private let dateFormatter: DateFormatter = { //formats the date to read easily
         let f = DateFormatter()
         f.dateFormat = "EEE, MMM d"
         return f
     }()
     
     private func format(_ value: Decimal) -> String {
-        currencyFormatter.string(from: value as NSDecimalNumber) ?? "$0.00"
+        currencyFormatter.string(from: value as NSDecimalNumber) ?? "$0.00" //formats the Decimal as a correct USD format
     }
     
     private let currencyFormatter: NumberFormatter = {
@@ -69,13 +69,43 @@ struct DailyTrackerRow: View {
                     Label("Food expense", systemImage: "fork.knife")
                                        .font(.subheadline)
                                        .foregroundStyle(.secondary)
-                                   Spacer()
                     Text(format(model.FoodExpense))
                                        .font(.subheadline)
                                        .foregroundStyle(.primary)
+                    Spacer()
+
                     
+                    Label("Rent expense", systemImage: "house")
+                                       .font(.subheadline)
+                                       .foregroundStyle(.secondary)
+                                   
+                    Text(format(model.RentExpense))
+                                       .font(.subheadline)
+                                       .foregroundStyle(.primary)
+                    Spacer()
+                    
+                    
+                    Label("Transportation expense", systemImage: "car")
+                                       .font(.subheadline)
+                                       .foregroundStyle(.secondary)
+                    Text(format(model.TransportationExpense))
+                                       .font(.subheadline)
+                                       .foregroundStyle(.primary)
+                  
+                    Spacer()
+                    
+                    Label("Misc expense", systemImage: "gear")
+                                       .font(.subheadline)
+                                       .foregroundStyle(.secondary)
+                                 
+                    Text(format(model.MiscExpense))
+                                       .font(.subheadline)
+                                       .foregroundStyle(.primary)
+                    Spacer()
                     
                 }
+                
+                
                 
                 
                 
